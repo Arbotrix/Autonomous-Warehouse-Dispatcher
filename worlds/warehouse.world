@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="warehouse_detailed">
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <!-- Perimeter Walls (15x15m) -->
+    <model name="perimeter">
+      <static>true</static>
+      <link name="n_wall"><pose>7.5 7.5 1.5 0 0 0</pose><collision name="c"><geometry><box><size>15 0.2 3</size></box></geometry></collision><visual name="v"><geometry><box><size>15 0.2 3</size></box></geometry><material><ambient>0.8 0.8 0.8 1</ambient></material></visual></link>
+      <link name="s_wall"><pose>7.5 -7.5 1.5 0 0 0</pose><collision name="c"><geometry><box><size>15 0.2 3</size></box></geometry></collision><visual name="v"><geometry><box><size>15 0.2 3</size></box></geometry><material><ambient>0.8 0.8 0.8 1</ambient></material></visual></link>
+      <link name="e_wall"><pose>15 0 1.5 0 0 0</pose><collision name="c"><geometry><box><size>0.2 15 3</size></box></geometry></collision><visual name="v"><geometry><box><size>0.2 15 3</size></box></geometry><material><ambient>0.8 0.8 0.8 1</ambient></material></visual></link>
+      <link name="w_wall"><pose>-1 0 1.5 0 0 0</pose><collision name="c"><geometry><box><size>0.2 15 3</size></box></geometry></collision><visual name="v"><geometry><box><size>0.2 15 3</size></box></geometry><material><ambient>0.8 0.8 0.8 1</ambient></material></visual></link>
+    </model>
+
+    <!-- Warehouse Storage Aisles -->
+    <model name="racks">
+      <static>true</static>
+      <!-- Aisle 1 -->
+      <link name="rack1_a"><pose>4 1 1 0 0 0</pose><collision name="c"><geometry><box><size>1 5 2</size></box></geometry></collision><visual name="v"><geometry><box><size>1 5 2</size></box></geometry><material><ambient>0.3 0.2 0.1 1</ambient></material></visual></link>
+      <link name="rack1_b"><pose>4 -4 1 0 0 0</pose><collision name="c"><geometry><box><size>1 4 2</size></box></geometry></collision><visual name="v"><geometry><box><size>1 4 2</size></box></geometry><material><ambient>0.3 0.2 0.1 1</ambient></material></visual></link>
+      <!-- Aisle 2 -->
+      <link name="rack2_a"><pose>8 3 1 0 0 0</pose><collision name="c"><geometry><box><size>1 6 2</size></box></geometry></collision><visual name="v"><geometry><box><size>1 6 2</size></box></geometry><material><ambient>0.3 0.2 0.1 1</ambient></material></visual></link>
+      <link name="rack2_b"><pose>8 -4.5 1 0 0 0</pose><collision name="c"><geometry><box><size>1 3 2</size></box></geometry></collision><visual name="v"><geometry><box><size>1 3 2</size></box></geometry><material><ambient>0.3 0.2 0.1 1</ambient></material></visual></link>
+      <!-- Aisle 3 -->
+      <link name="rack3"><pose>12 0 1 0 0 0</pose><collision name="c"><geometry><box><size>1 8 2</size></box></geometry></collision><visual name="v"><geometry><box><size>1 8 2</size></box></geometry><material><ambient>0.3 0.2 0.1 1</ambient></material></visual></link>
+    </model>
+
+    <!-- Floor Markers for Zones -->
+    <model name="markers">
+      <static>true</static>
+      <!-- White Spawn Zone -->
+      <link name="spawn_zone"><pose>0 0 0.01 0 0 0</pose><visual name="v"><geometry><plane><normal>0 0 1</normal><size>1 1</size></plane></geometry><material><ambient>1 1 1 1</ambient></material></visual></link>
+      <!-- CHANGED: Orange Loading Zone -->
+      <link name="loading_zone"><pose>2.0 3.0 0.01 0 0 0</pose><visual name="v"><geometry><plane><normal>0 0 1</normal><size>1 1</size></plane></geometry><material><ambient>1 0.5 0 1</ambient></material></visual></link>
+      <!-- Delivery Points A, B, C -->
+      <link name="point_a"><pose>6.0 -3.0 0.01 0 0 0</pose><visual name="v"><geometry><plane><normal>0 0 1</normal><size>1 1</size></plane></geometry><material><ambient>1 0 0 1</ambient></material></visual></link>
+      <link name="point_b"><pose>10.0 3.0 0.01 0 0 0</pose><visual name="v"><geometry><plane><normal>0 0 1</normal><size>1 1</size></plane></geometry><material><ambient>0 1 0 1</ambient></material></visual></link>
+      <link name="point_c"><pose>12.0 -3.0 0.01 0 0 0</pose><visual name="v"><geometry><plane><normal>0 0 1</normal><size>1 1</size></plane></geometry><material><ambient>1 1 0 1</ambient></material></visual></link>
+    </model>
+  </world>
+</sdf>
