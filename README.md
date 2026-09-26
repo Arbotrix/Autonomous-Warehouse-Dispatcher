@@ -1,6 +1,6 @@
 # Autonomous Warehouse Dispatcher
 
-An autonomous mobile robot (AMR) simulation for warehouse patrol/delivery, built with **ROS 2 (Humble)**, **Nav2**, **Gazebo**, and **SLAM Toolbox / AMCL**. The robot maps a simulated warehouse environment, localizes within the saved map, and autonomously patrols between a set of predefined waypoints using Nav2's action-based navigation stack.
+An autonomous mobile robot (AMR) simulation for warehouse patrol/delivery, built with **ROS 2 (Humble)**, **Nav2**, **Gazebo**, and **SLAM Toolbox / AMCL**. The robot maps a simulated warehouse environment, localizes within the saved map, and autonomously patrols between predefined waypoints using Nav2's action-based navigation stack.
 
 ---
 
